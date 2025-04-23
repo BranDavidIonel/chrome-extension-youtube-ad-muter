@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Ad Muter + Overlay",
+  "version": "1.0",
+  "description": "Mutes audio and displays an image during YouTube ads. Skips ads automatically.",
+  "permissions": ["scripting"],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["overlay.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["ad-overlay.jpg"],
+      "matches": ["*://www.youtube.com/*"]
+    }
+  ],
+  "action": {
+    "default_title": "YT Ad Muter"
+  }
+}
